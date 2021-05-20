@@ -136,7 +136,7 @@ struct LambdaDeploymentProvider: DeploymentProvider {
             logger.info("physicalMemory: \(ProcessInfo.processInfo.physicalMemory)")
             let fmt = ByteCountFormatter()
             fmt.countStyle = .memory
-            logger.info("physicalMemory: \(fmt.string(fromByteCount: ProcessInfo.processInfo.physicalMemory))")
+            logger.info("physicalMemory: \(fmt.string(fromByteCount: Int64(ProcessInfo.processInfo.physicalMemory)))")
         }
         
         if awsDeployOnly {
