@@ -131,14 +131,6 @@ struct LambdaDeploymentProvider: DeploymentProvider {
     }
     
     mutating func run() throws {
-        do {
-            logger.info("-[\(Self.self) \(#function)")
-            logger.info("physicalMemory: \(ProcessInfo.processInfo.physicalMemory)")
-            let fmt = ByteCountFormatter()
-            fmt.countStyle = .memory
-            logger.info("physicalMemory: \(fmt.string(fromByteCount: Int64(ProcessInfo.processInfo.physicalMemory)))")
-        }
-        
         if awsDeployOnly {
             logger.notice("Running with the --aws-deploy-only flag. Will skip compilation and try to re-use previous files")
         }
