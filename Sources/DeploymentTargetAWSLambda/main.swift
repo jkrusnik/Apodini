@@ -255,7 +255,7 @@ struct LambdaDeploymentProvider: DeploymentProvider {
                 "run", "--rm",
                 "--volume", "\(packageRootDir.path)/..:/src/",
                 "--workdir", "/src/\(packageRootDir.lastPathComponent)",
-                //"--memory", "100m",
+                ///"--memory", "100m",
                 imageName,
                 "bash", "-cl", bashCommand
             ],
